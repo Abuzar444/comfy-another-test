@@ -13,7 +13,7 @@ import { useUserContext } from '../context/user_context'
 import { formatPrice } from '../utils/helpers'
 import { Navigate, useNavigate } from 'react-router'
 
-const promise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY)
+const promise = loadStripe('pk_test_51MjygHLX1AGuIT55bFzjrZQu4QucC2ooWZSoH1rrrfG7RYpaD0TxpyDgtqDpULjr3MRppZiS4JRZSzHAE32rfV3500sjfe42l6')
 
 const CheckoutForm = () => {
   const { cart, total_amount, shipping_fee, clearCart } = useCartContext()
@@ -56,7 +56,7 @@ const CheckoutForm = () => {
       )
       console.log(data.clientSecret)
       setClientSecret(data.clientSecret)
-    } catch (error) {}
+    } catch (error) { }
   }
 
   useEffect(() => {
